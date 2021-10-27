@@ -1,5 +1,5 @@
 import requests
-
+API_Key = input("Enter the API KEY:")
 print("Enter the organization ID:")
 networkIDInput = input()
 
@@ -8,7 +8,7 @@ print(url)
 payload = {}
 headers = {
     'Accept': '*/*',
-    'X-Cisco-Meraki-API-Key': 'bcde40199feda1625701bc2af1f7cb972ddd676a',
+    'X-Cisco-Meraki-API-Key': (API_Key),
 
 }
 response = requests.request("GET", url, headers=headers, data=payload)

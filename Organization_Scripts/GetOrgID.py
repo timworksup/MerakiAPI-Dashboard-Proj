@@ -1,12 +1,12 @@
 import requests
 import meraki
-
+API_Key = input("Enter the API KEY:")
 url = "https://api.meraki.com/api/v1/organizations"
 
 payload={}
 headers = {
   'Accept': '*/*',
-  'X-Cisco-Meraki-API-Key': 'bcde40199feda1625701bc2af1f7cb972ddd676a'
+  'X-Cisco-Meraki-API-Key': (API_Key), 
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)
