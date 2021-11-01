@@ -13,6 +13,6 @@ headers = {
     "X-Cisco-Meraki-API-Key": (API_Key),
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("DELETE", url, headers=headers, data=payload)
 
 print(response.text)
