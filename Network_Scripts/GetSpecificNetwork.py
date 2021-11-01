@@ -1,9 +1,9 @@
 import requests
 API_Key = input("Enter the API KEY:")
-print("Enter the organization ID:")
-networkIDInput = input()
+organizationID = input("Enter the organization ID:")
+NetworkID = input("Enter the network ID:")
 
-url = "https://api.meraki.com/api/v1/organizations/%s/networks" % (networkIDInput)
+url = "https://api.meraki.com/api/v1/organizations/%s/networks/%s" % (organizationID, NetworkID)
 print(url)
 payload = {}
 headers = {
@@ -12,5 +12,4 @@ headers = {
 
 }
 response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text.encode('utf8'))
+print(response.text)
