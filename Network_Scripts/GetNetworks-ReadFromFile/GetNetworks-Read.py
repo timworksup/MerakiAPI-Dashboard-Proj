@@ -6,7 +6,7 @@ API_Line = linecache.getline(r"ScriptInput.txt", 1).rstrip()
 OrgID_Line = linecache.getline(r"ScriptInput.txt", 2).rstrip()
 
 url = "https://api.meraki.com/api/v1/organizations/%s/networks" % (OrgID_Line)
-print(url)
+
 
 payload = {} 
 headers = {
