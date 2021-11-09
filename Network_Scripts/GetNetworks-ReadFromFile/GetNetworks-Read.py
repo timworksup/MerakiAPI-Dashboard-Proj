@@ -1,19 +1,18 @@
 import requests
+import linecache
 import json
 
-FileRead = open("ScriptInput.txt", "r")
+API_Line = linecache.getline(r"ScriptInput.txt", 1).rstrip()
+OrgID_Line = linecache.getline(r"ScriptInput.txt", 2).rstrip()
 
-API_KEY = print(FileRead.readline(0))
-OrgID = print(FileRead.readline(1))
-
-url = "https://api.meraki.com/api/v1/organizations/%s/networks" % (OrgID)
+url = "https://api.meraki.com/api/v1/organizations/%s/networks" % (OrgID_Line)
 print(url)
 
-payload = {}
-header = {
+payload = {} 
+headers = {
     'Accept': '*/*',
-    'X-Cisco-Meraki-API-Key': (API_KEY),
+    'X-Cisco-Meraki-API-Key': (API_Line),
 }
 
-response = requests.request("GET", url, headers=header, data=payload).json
+response = requests.request("GET", url, headers=headers, data=payload).json()
 print(json.dumps(response,indent=2))
