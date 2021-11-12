@@ -2,8 +2,8 @@ import requests
 import linecache
 import json
 
-API_Line = linecache.getline(r"ScriptInput.env", 1).rstrip()
-OrgID_Line = linecache.getline(r"ScriptInput.env", 2).rstrip()
+API_Line = linecache.getline(r"ScriptInputApi.env", 1).rstrip()
+OrgID_Line = linecache.getline(r"ScriptInputApi.env", 2).rstrip()
 print(API_Line)
 
 url = "https://api.meraki.com/api/v1/organizations/%s/networks" % (OrgID_Line)
