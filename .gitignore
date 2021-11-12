@@ -1,1 +1,2 @@
-ScriptInputApi.env
+ScriptInputInfo.env
+./Network_Scripts/GetNetworks-ReadFromFile/ScriptInputInfo.env
